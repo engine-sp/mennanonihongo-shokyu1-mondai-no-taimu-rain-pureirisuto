@@ -141,11 +141,26 @@
                 lessonSelect.appendChild(option);
             });
 
+            const moreToolsOption = document.createElement('option');
+            moreToolsOption.value = 'more-tools';
+            moreToolsOption.textContent = '更多學習日文小工具';
+            moreToolsOption.style.color = '#ff3300';
+			moreToolsOption.style.backgroundColor='#eee';
+            lessonSelect.appendChild(moreToolsOption);
+
+            let currentLessonId = lessonSelect.value;
+
             lessonSelect.addEventListener('change', (e) => {
-                const targetId = e.target.value;
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                const selectedValue = e.target.value;
+                if (selectedValue === 'more-tools') {
+                    window.open('https://lavender-servant-6a3.notion.site/28670317b07c801496c2e4fe148e584c', '_blank');
+                    lessonSelect.value = currentLessonId;
+                } else {
+                    currentLessonId = selectedValue;
+                    const targetElement = document.getElementById(selectedValue);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
 
@@ -226,6 +241,7 @@
                         if (rect.top <= 100) {
                             if (lessonSelect.value !== lesson.id) {
                                 lessonSelect.value = lesson.id;
+                                currentLessonId = lesson.id;
                             }
                             break;
                         }
