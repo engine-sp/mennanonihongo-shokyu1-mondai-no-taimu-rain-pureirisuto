@@ -97,56 +97,140 @@
         document.addEventListener('DOMContentLoaded', () => {
             const audioPlayer = document.getElementById('audio-player');
             const playlistContainer = document.getElementById('playlist');
+            const container = document.getElementById('container');
             let currentEndTime = 0;
             let currentStartTime = 0;
+            const lessonOffsets = [];
+
+            // 建立下拉選單
+            const stickyContainer = document.createElement('div');
+            stickyContainer.className = 'sticky top-0 z-10 bg-white pt-2 pb-2 mb-4 border-b -mx-6 px-6';
+
+            const selectContainer = document.createElement('div');
+            selectContainer.className = 'flex items-center';
+
+            const label = document.createElement('span');
+            label.textContent = '快速選單';
+            label.className = 'mr-2 font-medium text-gray-700 whitespace-nowrap';
+
+            const lessonSelect = document.createElement('select');
+            lessonSelect.className = 'w-full p-2 border rounded shadow-sm';
+
+            selectContainer.appendChild(label);
+            selectContainer.appendChild(lessonSelect);
+            stickyContainer.appendChild(selectContainer);
+            playlistContainer.before(stickyContainer);
+
+            const lessons = questions.reduce((acc, q) => {
+                const match = q.title.match(/第(.+?)課/);
+                if (match) {
+                    const lessonNum = match[1];
+                    if (!acc[lessonNum]) {
+                        acc[lessonNum] = [];
+                    }
+                    acc[lessonNum].push(q);
+                }
+                return acc;
+            }, {});
+
+            const lessonNumbers = Object.keys(lessons);
+            lessonNumbers.forEach((lessonNum, index) => {
+                const option = document.createElement('option');
+                option.value = `l${index + 1}-q1`;
+                option.textContent = `第${lessonNum}課`;
+                lessonSelect.appendChild(option);
+            });
+
+            lessonSelect.addEventListener('change', (e) => {
+                const targetId = e.target.value;
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
 
             // 建立播放列表
-            questions.forEach(lesson => {
+            lessonNumbers.forEach((lessonNum, lessonIndex) => {
+                const lessonQuestions = lessons[lessonNum];
                 const lessonDiv = document.createElement('div');
                 lessonDiv.className = 'mb-8';
-                
-                const lessonHeader = document.createElement('div');
-                lessonHeader.className = 'flex items-center justify-between mb-4';
+                lessonDiv.id = `l${lessonIndex + 1}`;
 
-                const lessonTitle = document.createElement('h2');
-                lessonTitle.className = 'text-2xl font-semibold text-gray-700';
-                lessonTitle.textContent = lesson.title;
-                
-                const playAllButton = document.createElement('button');
-                playAllButton.className = 'px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-sm';
-                playAllButton.textContent = '聽取全部的題目';
-                playAllButton.onclick = () => {
-                    playSegment(lesson.url, 0, 0);
-                };
+                lessonQuestions.forEach((lesson, questionIndex) => {
+                    if (questionIndex === 0) {
+                        const lessonHeader = document.createElement('div');
+                        lessonHeader.className = 'flex items-center justify-between mb-4';
+                        lessonHeader.id = `l${lessonIndex + 1}-q1`;
 
-                lessonHeader.appendChild(lessonTitle);
-                lessonHeader.appendChild(playAllButton);
-                lessonDiv.appendChild(lessonHeader);
+                        const lessonTitle = document.createElement('h2');
+                        lessonTitle.className = 'text-2xl font-semibold text-gray-700';
+                        lessonTitle.textContent = `第${lessonNum}課`;
+                        
+                        const playAllButton = document.createElement('button');
+                        playAllButton.className = 'px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-sm';
+                        playAllButton.textContent = '聽取全部的題目';
+                        playAllButton.onclick = () => {
+                            playSegment(lesson.url, 0, 0);
+                        };
 
-                const questionsContainer = document.createElement('div');
-                questionsContainer.className = 'space-y-2';
-                lesson.questions.forEach(subQuestion => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'flex items-center justify-between p-3 rounded-lg hover:bg-gray-50';
+                        lessonHeader.appendChild(lessonTitle);
+                        // lessonHeader.appendChild(playAllButton); // for future use
+                        lessonDiv.appendChild(lessonHeader);
+                    }
+                    
+                    const questionsContainer = document.createElement('div');
+                    questionsContainer.className = 'space-y-2';
 
-                    const titleSpan = document.createElement('span');
-                    titleSpan.className = 'text-gray-800';
-                    titleSpan.textContent = subQuestion.title;
+                    const subQuestionTitle = document.createElement('h3');
+                    subQuestionTitle.className = 'text-lg font-medium text-gray-600 mt-4';
+                    subQuestionTitle.textContent = lesson.title;
+                    questionsContainer.appendChild(subQuestionTitle);
 
-                    const playButton = document.createElement('button');
-                    playButton.className = 'w-20 text-center px-3 py-1 text-sm font-semibold text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-500';
-                    playButton.textContent = '▶ Play';
-                    playButton.onclick = () => {
-                        playSegment(lesson.url, subQuestion.startTime, subQuestion.endTime);
-                    };
+                    lesson.questions.forEach(subQuestion => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'flex items-center justify-between p-3 rounded-lg hover:bg-gray-50';
 
-                    itemDiv.appendChild(titleSpan);
-                    itemDiv.appendChild(playButton);
-                    questionsContainer.appendChild(itemDiv);
+                        const titleSpan = document.createElement('span');
+                        titleSpan.className = 'text-gray-800';
+                        titleSpan.textContent = subQuestion.title;
+
+                        const playButton = document.createElement('button');
+                        playButton.className = 'w-20 text-center px-3 py-1 text-sm font-semibold text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-500';
+                        playButton.textContent = '▶ Play';
+                        playButton.onclick = () => {
+                            playSegment(lesson.url, subQuestion.startTime, subQuestion.endTime);
+                        };
+
+                        itemDiv.appendChild(titleSpan);
+                        itemDiv.appendChild(playButton);
+                        questionsContainer.appendChild(itemDiv);
+                    });
+                    lessonDiv.appendChild(questionsContainer);
                 });
-                lessonDiv.appendChild(questionsContainer);
 
                 playlistContainer.appendChild(lessonDiv);
+                
+                // For scrollspy
+                const lessonTop = lessonDiv.offsetTop;
+                lessonOffsets.push({ id: `l${lessonIndex + 1}-q1`, top: lessonTop, bottom: lessonTop + lessonDiv.offsetHeight });
+
+            });
+
+            window.addEventListener('scroll', () => {
+                for (let i = lessonOffsets.length - 1; i >= 0; i--) {
+                    const lesson = lessonOffsets[i];
+                    const element = document.getElementById(lesson.id);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        if (rect.top <= 100) {
+                            if (lessonSelect.value !== lesson.id) {
+                                lessonSelect.value = lesson.id;
+                            }
+                            break;
+                        }
+                    }
+                }
             });
 
             function playSegment(url, startTime, endTime) {
