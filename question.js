@@ -3,6 +3,11 @@ const questions = [
     "title": "第一課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T02.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 29.0
+      },
       {
         "title": "例題",
         "startTime": 4.0,
@@ -39,6 +44,11 @@ const questions = [
     "title": "第一課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T03.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 30.0
+      },
       {
         "title": "例題",
         "startTime": 1.0,
@@ -60,6 +70,11 @@ const questions = [
     "title": "第一課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T04.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 76.0
+      },
       {
         "title": "例題1",
         "startTime": 1.3,
@@ -92,6 +107,11 @@ const questions = [
     "title": "第二課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T06.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 27.0
+      },
       {
         "title": "第 1 題",
         "startTime": 5.0,
@@ -123,6 +143,11 @@ const questions = [
     "title": "第二課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T07.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 34.0
+      },
       {
         "title": "第 1 題 ",
         "startTime": 1.5,
@@ -139,6 +164,11 @@ const questions = [
     "title": "第二課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T08.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 43.0
+      },
       {
         "title": "第 1 題",
         "startTime": 1.4,
@@ -160,6 +190,11 @@ const questions = [
     "title": "第三課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T10.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.0
+      },
       {
         "title": "第 1 題 ",
         "startTime": 4.5,
@@ -191,6 +226,11 @@ const questions = [
     "title": "第三課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T11.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 80.48
+      },
       {
         "title": "第 1 題",
         "startTime": 1.74,
@@ -222,6 +262,11 @@ const questions = [
     "title": "第四課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T13.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 29.19
+      },
       {
         "title": "第 1 題",
         "startTime": 5.13,
@@ -253,6 +298,11 @@ const questions = [
     "title": "第四課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T14.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 24.52
+      },
       {
         "title": "第 1 題",
         "startTime": 1.82,
@@ -269,6 +319,11 @@ const questions = [
     "title": "第四課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T15.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 59.61
+      },
       {
         "title": "第 1 題",
         "startTime": 1.86,
@@ -290,6 +345,11 @@ const questions = [
     "title": "第四課問題4",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T16.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 55.61
+      },
       {
         "title": "例題",
         "startTime": 1.62,
@@ -341,6 +401,11 @@ const questions = [
     "title": "第五課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T18.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.57
+      },
       {
         "title": "第 1 題",
         "startTime": 4.94,
@@ -372,6 +437,11 @@ const questions = [
     "title": "第五課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T19.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 22.55
+      },
       {
         "title": "第 1 題",
         "startTime": 1.60,
@@ -388,6 +458,11 @@ const questions = [
     "title": "第五課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T20.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 53.22
+      },
       {
         "title": "第 1 題",
         "startTime": 1.90,
@@ -409,6 +484,11 @@ const questions = [
     "title": "第六課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T22.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.55
+      },
       {
         "title": "第 1 題",
         "startTime": 5.00,
@@ -440,6 +520,11 @@ const questions = [
     "title": "第六課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T23.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 91.98
+      },
       {
         "title": "第 1 題",
         "startTime": 1.44,
@@ -471,6 +556,11 @@ const questions = [
     "title": "第七課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T25.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 30.98
+      },
       {
         "title": "第 1 題",
         "startTime": 5.21,
@@ -502,6 +592,11 @@ const questions = [
     "title": "第七課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T26.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 21.65
+      },
       {
         "title": "第 1 題",
         "startTime": 1.74,
@@ -518,6 +613,11 @@ const questions = [
     "title": "第七課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T27.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 55.61
+      },
       {
         "title": "第 1 題",
         "startTime": 1.87,
@@ -539,6 +639,11 @@ const questions = [
     "title": "第八課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T29.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.11
+      },
       {
         "title": "第 1 題",
         "startTime": 5.19,
@@ -570,6 +675,11 @@ const questions = [
     "title": "第八課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T30.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 21.99
+      },
       {
         "title": "第 1 題",
         "startTime": 1.45,
@@ -586,6 +696,11 @@ const questions = [
     "title": "第八課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T31.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 58.91
+      },
       {
         "title": "第 1 題",
         "startTime": 1.69,
@@ -607,6 +722,11 @@ const questions = [
     "title": "第九課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T33.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.69
+      },
       {
         "title": "第 1 題",
         "startTime": 4.96,
@@ -638,6 +758,11 @@ const questions = [
     "title": "第九課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T34.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 94.86
+      },
       {
         "title": "第 1 題",
         "startTime": 1.86,
@@ -669,6 +794,11 @@ const questions = [
     "title": "第十課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T36.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 28.98
+      },
       {
         "title": "第 1 題",
         "startTime": 5.27,
@@ -700,6 +830,11 @@ const questions = [
     "title": "第十課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T37.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 51.20
+      },
       {
         "title": "第 1 題",
         "startTime": 1.71,
@@ -721,6 +856,11 @@ const questions = [
     "title": "第十課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T38.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 42.22
+      },
       {
         "title": "第 1 題",
         "startTime": 1.89,
@@ -737,6 +877,11 @@ const questions = [
     "title": "第十一課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T40.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 31.89
+      },
       {
         "title": "第 1 題",
         "startTime": 5.14,
@@ -768,6 +913,11 @@ const questions = [
     "title": "第十一課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T41.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 19.93
+      },
       {
         "title": "第 1 題",
         "startTime": 1.80,
@@ -784,6 +934,11 @@ const questions = [
     "title": "第十一課問題3",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T42.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 59.16
+      },
       {
         "title": "第 1 題",
         "startTime": 1.73,
@@ -805,6 +960,11 @@ const questions = [
     "title": "第十二課問題1",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T44.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 30.56
+      },
       {
         "title": "第 1 題",
         "startTime": 5.13,
@@ -836,6 +996,11 @@ const questions = [
     "title": "第十二課問題2",
     "url": "https://www.dahhsin.com.tw/uploadfile/xbookmp3/A151/T45.mp3",
     "questions": [
+	  {
+        "title": "全部播放",
+        "startTime": 0,
+        "endTime": 99.55
+      },
       {
         "title": "第 1 題 ",
         "startTime": 1.67,
